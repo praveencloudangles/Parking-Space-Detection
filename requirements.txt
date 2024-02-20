@@ -1,0 +1,9 @@
+torch
+torchvision
+torchaudio
+dill
+pathlib
+boto3
+opencv-python
+numpy
+glob2
