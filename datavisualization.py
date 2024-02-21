@@ -27,6 +27,7 @@ def visualise_image():
     images = open_random_images(os.path.join(os.getcwd(),"datasets/train/images"))
     for i in range(4):
         image = Image.open(images[i])
+        image = image.convert('RGB')
         image.save('sample'+str(i)+'.jpg')
     #meningioma_tumor_image.save('meningioma_tumor.jpg')
     return url
