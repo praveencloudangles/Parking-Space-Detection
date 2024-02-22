@@ -5,7 +5,6 @@ import glob as glob
 import torch
 import cv2
 import numpy as np
-from xml.etree import ElementTree as et
 import random
 import albumentations as A
 from albumentations.pytorch import ToTensorV2
