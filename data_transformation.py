@@ -110,7 +110,7 @@ def transform_data():
             boxes = []
             orig_boxes = []
             labels = []
-            tree = et.parse(annot_file_path)
+            tree = ET.parse(annot_file_path)
             root = tree.getroot()
             
             # Get the height and width of the image.
