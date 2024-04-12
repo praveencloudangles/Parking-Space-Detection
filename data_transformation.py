@@ -67,7 +67,7 @@ def transform_data():
 
     class CustomDataset(Dataset):
         def __init__(
-            self, images_path, labels_path, labels_txt,
+            self, images_path, labels_path,
             width, height, classes, transforms=None, 
             use_train_aug=False,
             train=False, mosaic=False
@@ -76,7 +76,6 @@ def transform_data():
             self.use_train_aug = use_train_aug
             self.images_path = images_path
             self.labels_path = labels_path
-            self.labels_txt = labels_txt
             self.height = height
             self.width = width
             self.classes = classes
@@ -288,9 +287,9 @@ def transform_data():
     IMAGE_HEIGHT = 480
     classes = ["free_parking_space","not_free_parking_space", "partially_free_parking_space"]
     # Create datasets
-    train_dataset = CustomDataset(os.path.join(os.getcwd(),"datasets/train/images/"),os.path.join(os.getcwd(),"datasets/train/annotations/"), os.path.join(os.getcwd(),"datasets/train/labels/"), IMAGE_WIDTH, IMAGE_HEIGHT, classes, get_train_transform())
+    train_dataset = CustomDataset(os.path.join(os.getcwd(),"datasets/train/images/"),os.path.join(os.getcwd(),"datasets/train/annotations/"), IMAGE_WIDTH, IMAGE_HEIGHT, classes, get_train_transform())
     print("one-------------",train_dataset)
-    valid_dataset = CustomDataset(os.path.join(os.getcwd(),"datasets/val/images/"),os.path.join(os.getcwd(),"datasets/val/annotations/"), os.path.join(os.getcwd(),"datasets/val/labels/"),IMAGE_WIDTH, IMAGE_HEIGHT, classes, get_valid_transform())
+    valid_dataset = CustomDataset(os.path.join(os.getcwd(),"datasets/val/images/"),os.path.join(os.getcwd(),"datasets/val/annotations/"),IMAGE_WIDTH, IMAGE_HEIGHT, classes, get_valid_transform())
     print("-------------",valid_dataset)
     i, a = train_dataset[0]
     print("iiiiii:",i)
